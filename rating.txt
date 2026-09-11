@@ -16,3 +16,11 @@
               Marguerite and Shane were my favourite side characters throughout the series, so I was definitely set to enjoy a story involving the both of them!
             </p>
           </article>
+
+<!-- Git Commands for next time -->
+<!-- 
+To commit and push new files yourself, use the following commands in your terminal:
+1. git add .
+2. git commit
+3. git push origin main
+-->
