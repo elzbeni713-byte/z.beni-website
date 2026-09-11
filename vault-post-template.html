@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Gentle Scent — a story by Z. Beni.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <title>Gentle Scent | Z. Beni</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* =========================
+       PAGE TITLE
+    ========================= */
+    .page-title {
+      background: var(--cream);
+      padding: 15px 0;
+    }
+
+    .page-title-inner {
+      width: min(1340px, calc(100% - 64px));
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-title .eyebrow {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .page-title .eyebrow:hover {
+      color: var(--ink);
+    }
+
+    /* =========================
+       STORY PAGE
+    ========================= */
+
+    .story-page {
+      width: min(850px, calc(100% - 64px));
+      margin: 90px auto 120px;
+    }
+
+    .story-header {
+      max-width: 760px;
+      margin: 0 auto 65px;
+      text-align: center;
+    }
+
+    .story-header .eyebrow {
+      margin: 0 0 15px;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .story-header h1 {
+      margin: 0 auto 25px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 70px;
+      font-weight: 500;
+      line-height: 1.02;
+
+      color: var(--ink);
+    }
+
+    .story-subtitle {
+      max-width: 680px;
+      margin: 0 auto 25px;
+
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      line-height: 1.55;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .story-details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .story-details span:not(:last-child)::after {
+      content: "·";
+      margin-left: 18px;
+      color: var(--line);
+    }
+
+    .story-cover {
+      width: min(560px, 100%);
+      aspect-ratio: 5 / 7;
+      margin: 0 auto 80px;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .story-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-text {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .story-text p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin: 0 0 30px;
+    }
+
+    .story-text .drop-cap::first-letter {
+      float: left;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 76px;
+      line-height: .75;
+      padding-right: 8px;
+      color: var(--accent);
+    }
+
+    .story-divider {
+      width: 45px;
+      height: 1px;
+      background: var(--accent);
+      margin: 60px auto;
+    }
+
+    .story-ending {
+      text-align: center;
+      font-family: "Playfair Display", serif !important;
+      font-size: 18px !important;
+      line-height: 1.6 !important;
+      font-style: italic;
+      color: var(--muted) !important;
+    }
+
+    .back-to-vault {
+      display: block;
+      width: max-content;
+      margin: 75px auto 0;
+
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5px;
+
+      transition: .2s ease;
+    }
+
+    .back-to-vault:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+
+    .story-footer {
+      max-width: 720px;
+      margin: 75px auto 0;
+      padding-top: 35px;
+      border-top: 1px solid var(--line);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .story-author {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .back-to-vault {
+      display: block;
+      width: max-content;
+      margin: 0;
+
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5px;
+
+      transition: .2s ease;
+    }
+
+    .back-to-vault:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    @media (max-width:720px) {
+      .story-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .story-page {
+        width: calc(100% - 40px);
+        margin: 65px auto 90px;
+      }
+
+      .story-header {
+        margin-bottom: 50px;
+      }
+
+      .page-title h1 {
+        font-size: 48px;
+      }
+
+      .story-header h1 {
+        font-size: 54px;
+      }
+
+      .story-subtitle {
+        font-size: 19px;
+      }
+
+      .story-details {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .story-cover {
+        margin-bottom: 55px;
+      }
+
+      .story-text p {
+        font-size: 21px;
+        line-height: 1.7;
+      }
+
+      .story-text .drop-cap::first-letter {
+        font-size: 65px;
+      }
+
+      .story-divider {
+        margin: 45px auto;
+      }
+    }
+
+    @media (max-width:450px) {
+
+      .story-header h1 {
+        font-size: 47px;
+      }
+
+      .story-subtitle {
+        font-size: 18px;
+      }
+
+      .story-text p {
+        font-size: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+     HEADER
+========================= -->
+
+  <header class="site-header">
+
+    <div class="nav-wrap">
+
+      <a class="brand" href="index.html" aria-label="Z. Beni home">
+        <img src="assets/zlogo.png" alt="Z. Beni logo">
+
+        <span>Z. Beni</span>
+      </a>
+
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+
+      <nav class="nav">
+
+        <a href="index.html">Home</a>
+
+        <a href="aboutme.html">About Me</a>
+
+        <a href="blog.html">Blog</a>
+
+        <a class="active" href="vault.html">
+          The Vault
+        </a>
+
+        <a href="bookshelf.html">Bookshelf</a>
+
+        <a href="gallery.html">Gallery</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+     PAGE TITLE
+========================= -->
+
+  <div class="page-title">
+    <div class="page-title-inner">
+      <a class="eyebrow" href="vault.html">&larr; Back to The Vault</a>
+      <a class="eyebrow" href="vault-post-template.html">Next Story &rarr;</a>
+    </div>
+  </div>
+
+
+
+  <!-- =========================
+     STORY
+========================= -->
+
+  <main class="story-page">
+
+
+    <header class="story-header">
+
+      <p class="eyebrow">
+        Novel · Fiction
+      </p>
+
+      <h1>
+        Gentle Scent
+      </h1>
+
+      <p class="story-subtitle">
+        A quiet story of grief, fragrance, healing,
+        and an unexpected kind of love.
+      </p>
+
+
+      <div class="story-details">
+
+        <span>By Z. Beni</span>
+
+        <span>Fiction</span>
+
+        <span>Novel</span>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- STORY COVER -->
+
+    <div class="story-cover image-slot">
+
+      <img src="assets/work-1.jpg.jpg" alt="Gentle Scent cover" onerror="this.style.display='none'">
+
+      <div class="image-placeholder">
+        <span>STORY COVER</span>
+      </div>
+
+    </div>
+
+
+
+    <!-- STORY TEXT -->
+
+    <article class="story-text">
+
+
+      <p class="drop-cap">
+        Genevieve has always found comfort in fragrance. As an orphan and a young
+        perfumer's apprentice, she has built a quiet life around delicate scents,
+        careful work, and the memories carried by flowers.
+      </p>
+
+
+      <p>
+        Her days are simple. There are bottles to prepare, flowers to sort,
+        customers to please, and countless little details that demand her
+        attention. It is a life she has learned not to ask too much from.
+      </p>
+
+
+      <p>
+        Then Derek Loewen arrives in her life.
+      </p>
+
+
+      <p>
+        Once a guard in the royal army, Derek now serves the Duke of Corlett.
+        He is a man who carries his past quietly, rarely allowing anyone close
+        enough to ask about the things he has lost.
+      </p>
+
+
+      <p>
+        Their paths were never supposed to cross in any meaningful way.
+        Yet somehow, between quiet conversations and the gentle scent of
+        orange blossom, something begins to change.
+      </p>
+
+
+      <p>
+        Neither of them expects love to find them there.
+      </p>
+
+
+      <div class="story-divider"></div>
+
+
+      <p>
+        Sometimes healing does not arrive dramatically.
+      </p>
+
+
+      <p>
+        Sometimes it is found in the smallest things: a familiar fragrance,
+        a warm room, someone's quiet presence, or the feeling that you no
+        longer have to carry everything alone.
+      </p>
+
+
+      <p>
+        And sometimes, after spending years simply surviving, peace begins
+        to feel a little like love.
+      </p>
+
+
+      <div class="story-divider"></div>
+
+
+      <p class="story-ending">
+        Some things are not meant to be forgotten.
+        <br>
+        They are meant to become something softer.
+      </p>
+
+
+    </article>
+
+    <div class="story-footer">
+
+      <p class="story-author">
+        Written by Z. Beni
+      </p>
+
+      <a href="vault.html" class="back-to-vault">
+        ← Back to The Vault
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+      <a class="brand" href="index.html" aria-label="Z. Beni home">
+        <img src="assets/zlogo.png" alt="Z. Beni logo">
+        <span>Z. Beni</span>
+      </a>
+
+
+      <div class="professional-contact">
+
+        <h4>For professional contact:</h4>
+
+        <a href="mailto:elzbeni713@gmail.com">
+          <i class="bi bi-envelope"></i>
+          elzbeni713@gmail.com
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>Explore</h4>
+
+        <a href="blog.html">Blog</a>
+        <a href="vault.html">The Vault</a>
+        <a href="gallery.html">Gallery</a>
+
+      </div>
+
+
+      <div>
+
+        <h4>Want to see more?</h4>
+
+        <a href="https://substack.com/@zbeni" data-demo-link>
+          <i class="bi bi-substack"></i>
+          Substack
+        </a>
+
+        <a href="https://www.instagram.com/authorzbeniz/" data-demo-link>
+          <i class="bi bi-instagram"></i>
+          Instagram
+        </a>
+
+        <a href="https://www.tiktok.com/@authorzbeniz?_r=1&_t=ZS-99d5FyFltzw/" data-demo-link>
+          <i class="bi bi-tiktok"></i>
+          TikTok
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Z. Beni. All rights reserved.
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

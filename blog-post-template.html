@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Z. Beni — writer, storyteller, and creative journal.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Z. Beni | About Me</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+
+  <style>
+    /* ========================================
+     PAGE TITLE
+  ======================================== */
+
+    .page-title {
+      background: var(--cream);
+      padding: 15px 0;
+    }
+
+    .page-title-inner {
+      width: min(1340px, calc(100% - 64px));
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .eyebrow:hover {
+      color: var(--ink);
+    }
+
+
+    /* ========================================
+     BLOG POST
+  ======================================== */
+
+    .post-page {
+      width: min(850px, calc(100% - 64px));
+      margin: 90px auto 120px;
+    }
+
+
+    /* ========================================
+     POST HEADER
+  ======================================== */
+
+    .post-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 65px;
+    }
+
+    .post-category {
+      margin: 0 0 15px;
+
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+
+      color: var(--accent);
+    }
+
+    .post-header h1 {
+      margin: 0 auto 25px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 70px;
+      font-weight: 500;
+      line-height: 1.02;
+
+      color: var(--ink);
+    }
+
+    .post-intro {
+      max-width: 680px;
+      margin: 0 auto 25px;
+
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      line-height: 1.55;
+      font-style: italic;
+
+      color: var(--muted);
+    }
+
+    .post-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: var(--muted);
+    }
+
+    .post-meta span:not(:last-child)::after {
+      content: "·";
+      margin-left: 18px;
+      color: var(--line);
+    }
+
+
+
+
+
+    /* ========================================
+     ARTICLE
+  ======================================== */
+
+    .post-content {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .post-content p {
+      margin: 0 0 30px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1.75;
+
+      color: var(--ink);
+    }
+
+    .post-content h2 {
+      margin: 60px 0 20px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.15;
+
+      color: var(--ink);
+    }
+
+    .post-content h3 {
+      margin: 45px 0 15px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 500;
+
+      color: var(--ink);
+    }
+
+    .post-content strong {
+      font-weight: 600;
+    }
+
+    .post-content em {
+      font-style: italic;
+    }
+
+    .post-content a {
+      color: var(--ink);
+      text-decoration-color: var(--accent);
+      text-underline-offset: 4px;
+    }
+
+    .post-content blockquote {
+      margin: 50px 0;
+
+      padding: 25px 30px;
+
+      border-left: 3px solid var(--accent);
+
+      background: var(--cream);
+
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      line-height: 1.6;
+      font-style: italic;
+
+      color: var(--muted);
+    }
+
+
+    /* ========================================
+     DROP CAP
+  ======================================== */
+
+    .drop-cap::first-letter {
+      float: left;
+
+      margin-right: 9px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 78px;
+      line-height: .75;
+
+      color: var(--accent);
+    }
+
+
+    /* ========================================
+     DIVIDER
+  ======================================== */
+
+    .post-divider {
+      width: 45px;
+      height: 1px;
+
+      margin: 60px auto;
+
+      background: var(--accent);
+    }
+
+
+    /* ========================================
+     POST FOOTER
+  ======================================== */
+
+    .post-end {
+      max-width: 720px;
+      margin: 70px auto 0;
+
+      padding-top: 35px;
+
+      border-top: 1px solid var(--line);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .post-author {
+      margin: 0;
+
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      font-style: italic;
+
+      color: var(--muted);
+    }
+
+    .back-link {
+      display: block;
+      width: max-content;
+
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      color: var(--ink);
+
+      border-bottom: 1px solid var(--line);
+
+      padding-bottom: 5px;
+
+      transition: .2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+
+    /* ========================================
+     MOBILE
+  ======================================== */
+
+    @media (max-width:720px) {
+
+      .page-title {
+        padding: 45px 0 50px;
+      }
+
+      .page-title-inner {
+        width: calc(100% - 40px);
+      }
+
+      .page-title h1 {
+        font-size: 48px;
+      }
+
+      .post-page {
+        width: calc(100% - 40px);
+        margin: 65px auto 90px;
+      }
+
+      .post-header {
+        margin-bottom: 50px;
+      }
+
+      .post-header h1 {
+        font-size: 54px;
+      }
+
+      .post-intro {
+        font-size: 19px;
+      }
+
+      .post-meta {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+
+
+      .post-content p {
+        font-size: 21px;
+        line-height: 1.7;
+      }
+
+      .post-content h2 {
+        font-size: 34px;
+        margin-top: 50px;
+      }
+
+      .post-content h3 {
+        font-size: 28px;
+      }
+
+      .post-content blockquote {
+        font-size: 19px;
+        padding: 20px 22px;
+      }
+
+      .post-end {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+
+    @media (max-width:450px) {
+
+      .page-title-inner {
+        width: calc(100% - 28px);
+      }
+
+      .post-page {
+        width: calc(100% - 28px);
+      }
+
+      .post-header h1 {
+        font-size: 47px;
+      }
+
+      .post-intro {
+        font-size: 18px;
+      }
+
+      .post-content p {
+        font-size: 20px;
+      }
+
+      .post-content h2 {
+        font-size: 31px;
+      }
+
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ========================================
+     HEADER
+======================================== -->
+
+  <header class="site-header">
+
+    <div class="nav-wrap">
+
+      <a class="brand" href="index.html" aria-label="Z. Beni home">
+
+        <img src="assets/zlogo.png" alt="Z. Beni logo">
+
+        <span>Z. Beni</span>
+
+      </a>
+
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+
+      <nav class="nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="aboutme.html">
+          About Me
+        </a>
+
+        <a class="active" href="blog.html">
+          Blog
+        </a>
+
+        <a href="vault.html">
+          The Vault
+        </a>
+
+        <a href="bookshelf.html">
+          Bookshelf
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================
+     PAGE TITLE
+======================================== -->
+
+  <div class="page-title">
+
+    <div class="page-title-inner">
+
+      <a class="eyebrow" href="blog.html">
+        &larr; Back to the Blog
+      </a>
+      <a class="eyebrow" href="blog-post-template.html">
+        Next Article &rarr;
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ========================================
+     BLOG POST
+======================================== -->
+
+  <main class="post-page">
+
+
+    <!-- POST HEADER -->
+
+    <header class="post-header">
+
+      <p class="post-category">
+        Writing & Life
+      </p>
+
+      <h1>
+        On Writing, Becoming,
+        <br>
+        and Finding My Way Back
+      </h1>
+
+      <p class="post-intro">
+        A few thoughts about writing, growing up,
+        and the strange comfort of always having
+        a story to return to.
+      </p>
+
+
+      <div class="post-meta">
+
+        <span>
+          September 11, 2026
+        </span>
+
+        <span>
+          5 min read
+        </span>
+
+      </div>
+
+    </header>
+
+
+
+
+
+
+
+    <!-- ARTICLE -->
+
+    <article class="post-content">
+
+
+      <p class="drop-cap">
+        I have always found it difficult to explain why I write.
+        There are practical answers, of course. I like stories.
+        I like words. I like creating people who never existed
+        and places I will probably never visit.
+      </p>
+
+
+      <p>
+        But none of those answers quite explain it.
+      </p>
+
+
+      <p>
+        Writing has always felt less like something I decided to do
+        and more like somewhere I eventually learned to return to.
+        Whenever life becomes too loud, I find myself opening a blank
+        page and trying to make sense of the noise.
+      </p>
+
+
+      <blockquote>
+        “No matter how life gets hard, I will always find my way
+        back to writing.”
+      </blockquote>
+
+
+      <h2>
+        The stories we carry
+      </h2>
+
+
+      <p>
+        I think every writer carries stories long before they know
+        what to do with them.
+      </p>
+
+
+      <p>
+        Sometimes they come from people we have met. Sometimes from
+        places we have lived in, books we have read, conversations
+        we overheard, or moments that seemed insignificant at the
+        time but somehow stayed with us.
+      </p>
+
+
+      <p>
+        And sometimes, they come from nowhere we can explain.
+      </p>
+
+
+      <h2>
+        Learning to become a writer
+      </h2>
+
+
+      <p>
+        For a long time, I thought being a writer meant having
+        everything figured out. A finished manuscript. A perfect
+        writing routine. A bookshelf full of published books.
+      </p>
+
+
+      <p>
+        I am slowly learning that it probably means something much
+        simpler.
+      </p>
+
+
+      <p>
+        It means continuing to write even when the story is messy.
+        It means allowing yourself to be a beginner. It means writing
+        badly sometimes and writing beautifully sometimes and
+        understanding that both are part of the same journey.
+      </p>
+
+
+      <p>
+        Perhaps becoming a writer is not a destination at all.
+        Perhaps it is simply the decision to keep returning to the
+        page.
+      </p>
+
+
+      <div class="post-divider"></div>
+
+
+      <p>
+        So this little corner of the internet is my attempt to do
+        exactly that.
+      </p>
+
+
+      <p>
+        To write things down. To share some of them. To keep others
+        tucked away until they are ready. And, hopefully, to make
+        another person somewhere feel a little less alone in the
+        strange and wonderful process of creating something from
+        nothing.
+      </p>
+
+
+    </article>
+
+
+
+    <!-- POST FOOTER -->
+
+    <div class="post-end">
+
+      <div class="post-author">
+        Written by Z. Beni
+      </div>
+
+      <a href="blog.html" class="back-link">
+        ← Back to Blog
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+      <a class="brand" href="index.html" aria-label="Z. Beni home">
+        <img src="assets/zlogo.png" alt="Z. Beni logo">
+        <span>Z. Beni</span>
+      </a>
+
+
+      <div class="professional-contact">
+
+        <h4>For professional contact:</h4>
+
+        <a href="mailto:elzbeni713@gmail.com">
+          <i class="bi bi-envelope"></i>
+          elzbeni713@gmail.com
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>Explore</h4>
+
+        <a href="blog.html">Blog</a>
+        <a href="vault.html">The Vault</a>
+        <a href="gallery.html">Gallery</a>
+
+      </div>
+
+
+      <div>
+
+        <h4>Want to see more?</h4>
+
+        <a href="https://substack.com/@zbeni" data-demo-link>
+          <i class="bi bi-substack"></i>
+          Substack
+        </a>
+
+        <a href="https://www.instagram.com/authorzbeniz/" data-demo-link>
+          <i class="bi bi-instagram"></i>
+          Instagram
+        </a>
+
+        <a href="https://www.tiktok.com/@authorzbeniz?_r=1&_t=ZS-99d5FyFltzw/" data-demo-link>
+          <i class="bi bi-tiktok"></i>
+          TikTok
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Z. Beni. All rights reserved.
+    </div>
+
+  </footer>
+
+
+
+
+  <!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+  <script>
+
+    /* Current year */
+
+    const year = document.getElementById("year");
+
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+
+
+    /* Mobile menu */
+
+    const menuToggle =
+      document.querySelector(".menu-toggle");
+
+    const nav =
+      document.querySelector(".nav");
+
+
+    if (menuToggle && nav) {
+
+      menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+          nav.classList.toggle("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>

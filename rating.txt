@@ -1,0 +1,18 @@
+<div class="rating">★★★★★</div>
+<div class="rating">★★★★☆</div>
+<div class="rating">★★★☆☆</div>
+<div class="rating">★★☆☆☆</div>
+<div class="rating">★☆☆☆☆</div>
+⯪
+
+<article class="book-card">
+            <img src="assets/deep end.jpg" alt="Book cover">
+
+            <h3>Deep end by Ali Hazelwood</h3>
+
+            <div class="rating">★★★⯪☆</div>
+
+            <p class="book-comment">
+              Marguerite and Shane were my favourite side characters throughout the series, so I was definitely set to enjoy a story involving the both of them!
+            </p>
+          </article>
